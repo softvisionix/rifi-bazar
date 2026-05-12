@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router';
 import { landingPages } from '../../data/landingPageConfig';
 import HeroSection from '../../components/am/HeroSection';
-import WhyChooseUs from '../../components/am/whyChooseUs';
+import WhyChooseUs from '../../components/am/WhyChooseUs';
 import Faq from '../../components/am/Faq';
 import Products from '../../components/am/Products';
 import Checkout from '../../components/am/Checkout';
