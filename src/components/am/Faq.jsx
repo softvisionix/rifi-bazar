@@ -15,16 +15,10 @@ export default function Faq({ faq }) {
   };
 
   return (
-    <section className="py-12 md:py-20 px-4 bg-gradient-to-br from-white via-gray-50/30 to-white">
+    <section className="max-w-7xl mx-auto py-12 md:py-20 px-3 bg-gradient-to-br from-white via-gray-50/30 to-white">
       <div className="">
         {/* Header Section */}
         <div className="text-center mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 rounded-full mb-4">
-            <HelpCircle className="w-4 h-4 text-orange-600" />
-            <span className="text-xs font-semibold text-orange-700 tracking-wide">
-              জিজ্ঞাসা & উত্তর
-            </span>
-          </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
             সাধারণ জিজ্ঞাসা
           </h2>
@@ -110,37 +104,6 @@ export default function Faq({ faq }) {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Contact Support Section */}
-        <div className="mt-10 md:mt-12 p-5 md:p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl md:rounded-2xl border border-orange-100">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-            <div className="text-center md:text-left">
-              <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
-                <MessageCircle className="w-5 h-5 text-orange-600" />
-                <h3 className="font-semibold text-gray-800">
-                  এখনও প্রশ্ন আছে?
-                </h3>
-              </div>
-              <p className="text-gray-600 text-sm">
-                আমাদের সাপোর্ট টিম আপনাকে সাহায্য করতে প্রস্তুত ২৪/৭
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button className="flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg font-medium text-sm hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-md">
-                <Phone className="w-4 h-4" />
-                কল করুন
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Badge */}
-        <div className="text-center mt-6">
-          <p className="text-xs text-gray-400">
-            সাধারণ প্রশ্নোত্তর সাহায্য পাতাটি সহায়ক হয়েছে? যদি থাকে তাহলে
-            অন্যদের সাথে শেয়ার করুন
-          </p>
         </div>
       </div>
     </section>

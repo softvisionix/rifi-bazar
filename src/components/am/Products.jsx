@@ -30,23 +30,15 @@ const Products = ({ product }) => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 rounded-full mb-4">
-            <Package className="w-4 h-4 text-orange-600" />
-            <span className="text-xs font-semibold text-orange-700 tracking-wide">
-              আমাদের স্পেশাল কালেকশন
-            </span>
-          </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
             আমগুলো দেখুন একদম <span className="text-orange-500">টাটকা</span>
           </h2>
-          <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
-            সরাসরি আমাদের বাগান থেকে সংগ্রহ করা সবচেয়ে তাজা ও রসালো আম
-          </p>
+
           <div className="w-20 h-0.5 bg-gradient-to-r from-orange-400 to-amber-400 mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Slider Section */}
-        <div className="relative px-4  md:px-0">
+        <div className="relative px-3  md:px-0">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
             effect="coverflow"
@@ -94,7 +86,7 @@ const Products = ({ product }) => {
           >
             {productsWithDetails.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="group relative bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="group relative bg-white rounded-[7px] md:rounded-[10px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                   {/* Image Container */}
                   <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50">
                     <img
@@ -131,7 +123,7 @@ const Products = ({ product }) => {
           width: 36px;
           height: 36px;
           background: white;
-          border-radius: 50%;
+          border-radius: 7px;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
           transition: all 0.3s ease;
         }
