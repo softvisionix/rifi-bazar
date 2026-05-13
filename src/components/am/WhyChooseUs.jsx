@@ -24,14 +24,14 @@ const WhyChooseUs = ({ whyChooseUs }) => {
   const images = whyChooseUs?.images || [];
 
   const scrollToOrder = () => {
-    const orderForm = document.getElementById('checkOut');
+    const orderForm = document.getElementById('checkout');
     if (orderForm) {
       orderForm.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-10 sm:py-12 md:py-16 lg:py-20 px-3 md:px-0  ">
+    <section className="max-w-7xl mx-auto  px-3 md:px-0 mb-8 md:mb-12 ">
       <div className="">
         {/* Section Header - Responsive */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">

@@ -15,11 +15,13 @@ import {
   CheckCircle,
   Star,
 } from 'lucide-react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const packages = [
   { label: '১২ কেজি প্যাকেজ', value: 12, price: 3000, popular: false },
-  { label: '২০ কেজি প্যাকেজ', value: 20, price: 5000, popular: true },
-  { label: '৪০ কেজি প্যাকেজ', value: 40, price: 10000, popular: false },
+  { label: '২৪ কেজি প্যাকেজ', value: 24, price: 5000, popular: true },
 ];
 
 const Checkout = ({ selectedProduct }) => {
@@ -37,14 +39,13 @@ const Checkout = ({ selectedProduct }) => {
 
   // Calculate total based on selected package price and quantity
   const total = selectedPackage.price * qty;
-  const shipping = total > 5000 ? 0 : 100;
-  const finalTotal = total + shipping;
+  const finalTotal = total;
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -52,7 +53,6 @@ const Checkout = ({ selectedProduct }) => {
     const orderData = {
       name: formData.name,
       mobile: formData.mobile,
-      email: formData.email,
       address: formData.address,
       productName: selectedProduct?.name,
       price: selectedPackage.price, // Selected package price
@@ -66,23 +66,37 @@ const Checkout = ({ selectedProduct }) => {
 
     console.log('Order Data sent to backend:', orderData);
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
       setIsSubmitting(false);
       setOrderSuccess(true);
-
-      // Reset form after success
-      setTimeout(() => {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/orders`,
+        orderData,
+      );
+      const data = res.data;
+      console.log(data);
+      if (data.message === 'Order saved successfully!') {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Order placed successfully',
+          icon: 'success',
+          background: '#fff',
+          color: '#222',
+          confirmButtonColor: '#f59e0b', // theme color
+        });
+        toast.success('Order saved successfully!');
         setOrderSuccess(false);
         setFormData({ name: '', mobile: '', email: '', address: '' });
         setQty(1);
         setSelectedPackage(packages[1]);
-      }, 3000);
-    }, 1500);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <section className="md:pb-16 max-w-7xl mx-auto ">
+    <section id="checkout" className="md:pb-16 max-w-7xl mx-auto ">
       <div className="">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
@@ -109,7 +123,7 @@ const Checkout = ({ selectedProduct }) => {
             {/* Two Column Layout Inside Card */}
             <div className="grid lg:grid-cols-2 gap-0">
               {/* LEFT SIDE - ORDER SUMMARY */}
-              <div className="border-r border-gray-100 px-3 md:px-0 py-5 md:p-6 space-y-6">
+              <div className="border-r border-gray-100 px-3  py-5 md:p-6 space-y-6">
                 {/* Product Image & Name */}
                 <div className="flex gap-4 pb-4 border-b border-gray-100">
                   <img
@@ -207,17 +221,8 @@ const Checkout = ({ selectedProduct }) => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">ডেলিভারি চার্জ</span>
-                    {shipping === 0 ? (
-                      <span className="text-green-600 font-semibold">ফ্রি</span>
-                    ) : (
-                      <span className="font-semibold">{shipping} TK</span>
-                    )}
+                    <span className="text-green-600 font-semibold">ফ্রি</span>
                   </div>
-                  {shipping > 0 && (
-                    <p className="text-xs text-gray-400">
-                      *৫০০০+ টাকার অর্ডারে ফ্রি ডেলিভারি
-                    </p>
-                  )}
                   <div className="border-t border-gray-200 pt-2 mt-2">
                     <div className="flex justify-between items-center">
                       <span className="font-bold text-gray-800">মোট টাকা</span>

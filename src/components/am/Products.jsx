@@ -6,7 +6,7 @@ import {
   Autoplay,
   EffectCoverflow,
 } from 'swiper/modules';
-import { Package, Star, TrendingUp, Eye } from 'lucide-react';
+import { Package, Star, TrendingUp, Eye, ArrowRight } from 'lucide-react';
 
 // Swiper styles
 import 'swiper/css';
@@ -25,11 +25,17 @@ const Products = ({ product }) => {
       reviews: 120,
     })) || [];
 
+  const scrollCheckOut = () => {
+    const checkOut = document.getElementById('checkout');
+    if (checkOut) {
+      checkOut.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <section className="  bg-gradient-to-b from-white to-orange-50/30">
+    <section className=" mb-8 md:mb-12 bg-gradient-to-b from-white to-orange-50/30">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
             আমগুলো দেখুন একদম <span className="text-orange-500">টাটকা</span>
           </h2>
@@ -109,6 +115,17 @@ const Products = ({ product }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+
+        {/* CTA Button - Enhanced */}
+        <div className="flex justify-center pt-2">
+          <button
+            onClick={scrollCheckOut}
+            className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+          >
+            <span>অর্ডার করুন</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
 

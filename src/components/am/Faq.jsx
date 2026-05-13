@@ -15,7 +15,7 @@ export default function Faq({ faq }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-12 md:py-20 px-3 bg-gradient-to-br from-white via-gray-50/30 to-white">
+    <section className="max-w-7xl mx-auto mb-8 md:mb-12 px-3 ">
       <div className="">
         {/* Header Section */}
         <div className="text-center mb-10 md:mb-12">
