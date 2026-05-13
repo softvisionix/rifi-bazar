@@ -54,27 +54,23 @@ const Checkout = ({ selectedProduct }) => {
       name: formData.name,
       mobile: formData.mobile,
       address: formData.address,
-      productName: selectedProduct?.name,
+      productName: selectedProduct?.title,
       price: selectedPackage.price, // Selected package price
       image: selectedProduct?.image,
       qty: selectedPackage.value, // Send KG/Package size instead of quantity
-      packageKg: selectedPackage.value,
       total: finalTotal,
       status: 'processing',
       orderDate: new Date().toISOString(),
     };
 
-    console.log('Order Data sent to backend:', orderData);
-
     try {
-      setIsSubmitting(false);
+      setIsSubmitting(true);
       setOrderSuccess(true);
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/orders`,
         orderData,
       );
       const data = res.data;
-      console.log(data);
       if (data.message === 'Order saved successfully!') {
         Swal.fire({
           title: 'Success!',
@@ -90,8 +86,10 @@ const Checkout = ({ selectedProduct }) => {
         setQty(1);
         setSelectedPackage(packages[1]);
       }
+      setIsSubmitting(false);
     } catch (error) {
       console.log(error);
+      setIsSubmitting(false);
     }
   };
 
