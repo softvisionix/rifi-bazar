@@ -20,7 +20,7 @@ const HeroSection = ({ hero }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 py-8 sm:px-6 md:px-8 lg:px-12 md:py-12 lg:py-16 flex flex-col items-center text-center">
+      <div className="relative z-10 px-0.1 py-8 sm:px-6 md:px-8 lg:px-12 md:py-12 lg:py-16 flex flex-col items-center text-center">
         {/* Session Time Badge - Enhanced */}
         <div className="mb-6 md:mb-8 animate-bounce-slow">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-lg">
