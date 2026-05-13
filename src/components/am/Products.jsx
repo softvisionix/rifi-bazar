@@ -98,7 +98,7 @@ const Products = ({ product }) => {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-56 md:h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
                     {/* Overlay Badge */}

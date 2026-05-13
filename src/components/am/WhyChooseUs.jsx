@@ -31,7 +31,7 @@ const WhyChooseUs = ({ whyChooseUs }) => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto  px-3 md:px-0 mb-8 md:mb-12 ">
+    <section className="max-w-7xl mx-auto mb-8 md:mb-12 px-3 md:px-0  ">
       <div className="">
         {/* Section Header - Responsive */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
@@ -70,7 +70,7 @@ const WhyChooseUs = ({ whyChooseUs }) => {
                 >
                   {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                      <div className="relative h-[260px] sm:h-[320px] md:h-[380px] lg:h-[465px]">
+                      <div className="relative ">
                         <img
                           src={image}
                           alt={`Why choose us ${index + 1}`}

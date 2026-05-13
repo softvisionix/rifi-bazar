@@ -4,15 +4,15 @@ import himsagor from '../assets/am/হিমসাগর আম.png';
 import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
-import AmropaliBanner from '../assets/am/আম্রপালি  banner.webp';
+import AmropaliBanner from '../assets/am/web banner.png';
 import NakFojliBanner from '../assets/am/নাকফজলি banner.webp';
 import HimsagorBanner from '../assets/am/HimsagorBanner.jpg';
 import LangraBanner from '../assets/am/LangraBanner.webp';
 
 // why we slider
 // Amropali
-import AmropaliSilder1 from '../assets/am/HimsagorBanner.jpg';
-import AmropaliSilder2 from '../assets/am/LangraBanner.webp';
+import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
+import AmropaliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 
 // Nak Fojli
 import NakFojliSilder1 from '../assets/am/HimsagorBanner.jpg';
@@ -20,8 +20,8 @@ import NakFojliSilder2 from '../assets/am/LangraBanner.webp';
 
 // product slider
 // Amropali
-import AmropaProductliSilder1 from '../assets/am/HimsagorBanner.jpg';
-import AmropaProductliSilder2 from '../assets/am/LangraBanner.webp';
+import AmropaProductliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
+import AmropaProductliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 
 // Nak Fojli
 import NakFojliProductSilder1 from '../assets/am/HimsagorBanner.jpg';

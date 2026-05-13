@@ -9,7 +9,7 @@ const HeroSection = ({ hero }) => {
     }
   };
   return (
-    <div className="relative py-10 md:py-24 lg:py-32 mb-8 md:mb-12 overflow-hidden rounded-none md:rounded-xl shadow-2xl">
+    <div className="relative py-10 md:py-24 lg:py-32 mb-8 md:mb-12 overflow-hidden rounded-none  shadow-2xl">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
